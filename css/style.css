@@ -393,7 +393,14 @@ a:focus {
 }
 
 .navbar-brand {
-  margin-top: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand img {
+  max-width: 80px;
+  height: auto;
+  margin: 8px 0;
 }
 
 .dropdown .dropdown-menu {
@@ -1394,6 +1401,12 @@ a:focus {
 
 .logo span {
   color: #223a66;
+}
+
+.logo img {
+  max-width: 70px;
+  height: auto;
+  margin: 5px 0;
 }
 
 .widget .divider {

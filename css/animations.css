@@ -278,10 +278,19 @@
 
 /* Logo animation */
 .navbar-brand img {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, max-width 0.3s ease;
 }
 
 .navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* Footer logo animation */
+.logo img {
+  transition: transform 0.3s ease, max-width 0.3s ease;
+}
+
+.logo:hover img {
   transform: scale(1.05);
 }
 

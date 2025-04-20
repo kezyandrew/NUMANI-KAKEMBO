@@ -1,48 +1,55 @@
-// Animations and Page Motions - Numani Kakembo Co
+// Animations and Page Motions - Numani Kakembo Co - Optimized for Performance
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Navbar background on scroll
+    // Performance optimization - Debounce scroll events
+    let scrollTimer;
+    
+    // Navbar background on scroll - optimized with debounce
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-bg');
-        } else {
-            navbar.classList.remove('navbar-bg');
+        if (!scrollTimer) {
+            scrollTimer = setTimeout(function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-bg');
+                } else {
+                    navbar.classList.remove('navbar-bg');
+                }
+                scrollTimer = null;
+            }, 100);
         }
     });
 
-    // Initialize scroll animations
+    // Initialize optimized animations
     initScrollAnimations();
     
-    // Initialize counter animations
-    initCounterAnimations();
+    // Initialize counter animations only when visible
+    if (document.querySelector('.counter-stat')) {
+        initCounterAnimations();
+    }
     
-    // Add hover effects to service cards
-    initHoverEffects();
-    
-    // Add shimmer effect to CTA buttons
-    initCTAEffects();
-    
-    // Add mineral animations
-    initMineralAnimations();
+    // Add back-to-top behavior
+    initBackToTop();
 });
 
-// Detect when elements enter the viewport and trigger animations
+// More efficient intersection observer with reduced recalculations
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     
+    // Skip if no elements to animate
+    if (animatedElements.length === 0) return;
+    
+    // Performance: use single observer instance for all elements
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // If it's a counter, start the counter
-                if (entry.target.classList.contains('counter-stat')) {
-                    startCounter(entry.target.querySelector('.h3'));
-                }
+                // Once animated, stop observing for better performance
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.2 // Trigger when 20% of the element is visible
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
     });
     
     animatedElements.forEach(element => {
@@ -50,34 +57,37 @@ function initScrollAnimations() {
     });
 }
 
-// Counter animations
+// Optimized counter animations
 function initCounterAnimations() {
-    const counterSection = document.querySelector('.cta-section');
+    const counters = document.querySelectorAll('.counter-stat .h3');
+    
+    // Skip if no counters
+    if (counters.length === 0) return;
     
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            const counters = document.querySelectorAll('.counter-stat .h3');
-            counters.forEach((counter, index) => {
-                setTimeout(() => {
-                    startCounter(counter);
-                }, index * 200); // Stagger the counter animations
+            counters.forEach(counter => {
+                startCounter(counter);
             });
-            observer.unobserve(counterSection);
+            // Stop observing after triggering
+            observer.disconnect();
         }
     }, {
         threshold: 0.5
     });
     
+    // Only observe the counter section container rather than each counter
+    const counterSection = document.querySelector('.cta-section');
     if (counterSection) {
         observer.observe(counterSection);
     }
 }
 
-// Animated counting function
+// More efficient counter function with reduced DOM updates
 function startCounter(element) {
     const target = parseInt(element.textContent, 10);
-    const duration = 2000; // 2 seconds
-    const step = target / (duration / 16); // 16ms is approx one frame at 60fps
+    const duration = 1500; // Reduced from 2000ms to 1500ms
+    const step = target / (duration / 32); // Reduced from 16ms to 32ms frame rate
     let current = 0;
     
     const timer = setInterval(() => {
@@ -88,7 +98,50 @@ function startCounter(element) {
         } else {
             element.textContent = Math.floor(current);
         }
-    }, 16);
+    }, 32); // Using 32ms instead of 16ms - still smooth but half the updates
+}
+
+// Optimized back-to-top behavior
+function initBackToTop() {
+    const scrollLinks = document.querySelectorAll('.js-scroll-trigger, .backtop');
+    
+    if (scrollLinks.length === 0) return;
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.hash !== '') {
+                e.preventDefault();
+                const hash = this.hash;
+                
+                document.querySelector(hash).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else if (this.classList.contains('backtop')) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Show/hide back to top button with debounce
+    const backTopBtn = document.querySelector('.backtop');
+    if (backTopBtn) {
+        let scrollTimer;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimer) {
+                scrollTimer = setTimeout(function() {
+                    if (window.scrollY > 300) {
+                        backTopBtn.classList.add('reveal');
+                    } else {
+                        backTopBtn.classList.remove('reveal');
+                    }
+                    scrollTimer = null;
+                }, 100);
+            }
+        });
+    }
 }
 
 // Initialize hover effects for service cards
@@ -161,29 +214,6 @@ function initMineralAnimations() {
         }
     });
 }
-
-// Add scroll to top smooth behavior
-window.addEventListener('load', function() {
-    const scrollLinks = document.querySelectorAll('.js-scroll-trigger, .backtop');
-    
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.hash !== '') {
-                e.preventDefault();
-                const hash = this.hash;
-                
-                document.querySelector(hash).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            } else if (this.classList.contains('backtop')) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
 
 // Add parallax effect to hero section background
 window.addEventListener('scroll', function() {

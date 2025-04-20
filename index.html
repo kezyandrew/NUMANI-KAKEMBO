@@ -4,29 +4,37 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Numani Kakembo Co - Premier African Commodity Trading Company">
   <meta name="author" content="themefisher.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Numani Kakembo Co - Premier Commodity Trading Company</title>
 
+  <!-- Resource hints for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" href="images/logo.png" as="image">
+  
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 
-  <!-- bootstrap.min css -->
+  <!-- Critical CSS -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  <!-- Icon Font Css -->
-  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
-  <!-- Slick Slider  CSS -->
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
   
-  <!-- Hero Specific Styles -->
-  <link rel="stylesheet" href="css/hero-styles.css">
+  <!-- Defer non-critical CSS -->
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/hero-styles.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
   
-  <!-- Animation Styles -->
-  <link rel="stylesheet" href="css/animations.css">
-
+  <!-- Fallback for JS disabled browsers -->
+  <noscript>
+    <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/hero-styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+  </noscript>
 </head>
 
 <body id="top">
@@ -96,7 +104,7 @@
             
             <div class="col-lg-5">
                 <div class="hero-image-container text-center">
-                    <img src="images/service/service-11.jpg" alt="Numani Kakembo Co" class="img-fluid hero-image" style="border-radius: 10px; box-shadow: 0 15px 30px rgba(34, 58, 102, 0.15);">
+                    <img src="images/service/service-11.jpg" alt="Numani Kakembo Co" class="img-fluid hero-image" style="border-radius: 10px; box-shadow: 0 15px 30px rgba(34, 58, 102, 0.15);" loading="lazy">
                 </div>
             </div>
         </div>
@@ -120,7 +128,7 @@
                         </div>
                         <h5 class="meta-title mb-0">Trade Finance</h5>
                     </div>
-                    <img src="images/service/construction-2.jpg" alt="Trade Finance" class="img-fluid mb-3" style="border-radius: 8px; height: 180px; object-fit: cover; width: 100%;">
+                    <img src="images/service/construction-2.jpg" alt="Trade Finance" class="img-fluid mb-3" style="border-radius: 8px; height: 180px; object-fit: cover; width: 100%;" loading="lazy">
                     <p class="meta-description">Facilitating seamless financial flows for cross-border transactions.</p>
                 </div>
             </div>
@@ -132,7 +140,7 @@
                         </div>
                         <h5 class="meta-title mb-0">Global Markets</h5>
                     </div>
-                    <img src="images/service/energy-2.jpg" alt="Global Markets" class="img-fluid mb-3" style="border-radius: 8px; height: 180px; object-fit: cover; width: 100%;">
+                    <img src="images/service/energy-2.jpg" alt="Global Markets" class="img-fluid mb-3" style="border-radius: 8px; height: 180px; object-fit: cover; width: 100%;" loading="lazy">
                     <p class="meta-description">Connecting Ugandan commodities with international buyers.</p>
                 </div>
             </div>
@@ -188,13 +196,13 @@
 		<div class="row align-items-center">
 			<div class="col-lg-4 col-sm-6">
 				<div class="about-img animate-on-scroll slide-left-scroll">
-					<img src="images/service/minerals-1.jpg" alt="Minerals Products" class="img-fluid rounded shadow" style="height: 250px; object-fit: cover; width: 100%;">
-					<img src="images/service/energy-1.jpg" alt="Energy Products" class="img-fluid mt-4 rounded shadow" style="height: 250px; object-fit: cover; width: 100%;">
+					<img src="images/service/minerals-1.jpg" alt="Minerals Products" class="img-fluid rounded shadow" style="height: 250px; object-fit: cover; width: 100%;" loading="lazy">
+					<img src="images/service/energy-1.jpg" alt="Energy Products" class="img-fluid mt-4 rounded shadow" style="height: 250px; object-fit: cover; width: 100%;" loading="lazy">
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6">
 				<div class="about-img mt-4 mt-lg-0 animate-on-scroll zoom-in-scroll">
-					<img src="images/service/minerals-2.jpg" alt="Mineral Resources" class="img-fluid rounded shadow" style="height: 520px; object-fit: cover; width: 100%;">
+					<img src="images/service/minerals-2.jpg" alt="Mineral Resources" class="img-fluid rounded shadow" style="height: 520px; object-fit: cover; width: 100%;" loading="lazy">
 				</div>
 			</div>
 			<div class="col-lg-4">
@@ -466,31 +474,32 @@
 		
 
     <!-- 
-    Essential Scripts
-    =====================================-->
+    Essential Scripts - Optimized Loading -->
 
-    
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js"></script>
-    <!-- Bootstrap 4.3.2 -->
-    <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/counterup/jquery.easing.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    
-    <script src="plugins/shuffle/shuffle.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
-    <!-- Google Map -->
-    <script src="plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-    
-    <script src="js/script.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- Animation Scripts -->
-    <script src="js/animations.js"></script>
+<!-- Main jQuery with defer for non-blocking -->
+<script src="plugins/jquery/jquery.js" defer></script>
+<!-- Bootstrap 4.3.2 with defer -->
+<script src="plugins/bootstrap/js/popper.js" defer></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js" defer></script>
+<script src="plugins/counterup/jquery.easing.js" defer></script>
+<!-- Slick Slider with defer -->
+<script src="plugins/slick-carousel/slick/slick.min.js" defer></script>
+<!-- Counterup with defer -->
+<script src="plugins/counterup/jquery.waypoints.min.js" defer></script>
+<script src="plugins/shuffle/shuffle.min.js" defer></script>
+<script src="plugins/counterup/jquery.counterup.min.js" defer></script>
+
+<!-- Custom scripts with defer -->
+<script src="js/script.js" defer></script>
+<script src="js/contact.js" defer></script>
+<!-- Optimized animations script -->
+<script src="js/animations.js" defer></script>
+
+<!-- Remove Google Maps script if not needed on homepage -->
+<!-- 
+<script src="plugins/google-map/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+-->
 
   </body>
   </html>
