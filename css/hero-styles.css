@@ -1,0 +1,280 @@
+/* Hero Section Metamorphic Styles */
+.hero-section {
+    position: relative;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    padding: 100px 0 120px;
+    margin-top: -30px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 0;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #223a66;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #6F8BA4;
+    max-width: 600px;
+}
+
+.hero-shape {
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 20px rgba(34, 58, 102, 0.1);
+    opacity: 0.5;
+}
+
+.hero-shape-1 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    right: 20%;
+    transform: rotate(20deg);
+}
+
+.hero-shape-3 {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 25%;
+    transform: rotate(-15deg);
+}
+
+.hero-shape-2 {
+    width: 50px;
+    height: 50px;
+    top: 30%;
+    right: 10%;
+    transform: rotate(45deg);
+}
+
+.hero-shape-4 {
+    width: 70px;
+    height: 70px;
+    bottom: 30%;
+    right: 15%;
+    transform: rotate(30deg);
+}
+
+.hero-icon {
+    position: absolute;
+    z-index: 2;
+    color: #223a66;
+    opacity: 0.8;
+}
+
+.hero-icon-1 {
+    font-size: 35px;
+    top: 25%;
+    right: 22%;
+}
+
+.hero-icon-2 {
+    font-size: 25px;
+    top: 32%;
+    right: 11%;
+}
+
+.hero-icon-3 {
+    font-size: 40px;
+    bottom: 20%;
+    right: 28%;
+}
+
+.hero-icon-4 {
+    font-size: 30px;
+    bottom: 32%;
+    right: 17%;
+}
+
+.hero-image-container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(34, 58, 102, 0.15);
+}
+
+/* Feature Cards Section */
+.feature-cards {
+    background-color: white;
+    position: relative;
+    z-index: 3;
+    margin-top: -40px;
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
+}
+
+.metamorphic-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(34, 58, 102, 0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.metamorphic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 58, 102, 0.15);
+}
+
+.meta-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+}
+
+.meta-icon i {
+    font-size: 24px;
+    color: #223a66;
+}
+
+.meta-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #223a66;
+    margin-bottom: 15px;
+}
+
+.meta-description {
+    color: #6F8BA4;
+    margin-bottom: 0;
+}
+
+/* Service Items */
+.service-item {
+    padding: 25px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(34, 58, 102, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 58, 102, 0.15);
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Button Styling */
+.btn-main-2, .btn-outline-primary {
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Features Section */
+.features {
+    padding-top: 60px !important;
+    margin-top: 20px;
+}
+
+.feature-block {
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.1);
+}
+
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 80px 0 100px;
+    }
+    
+    .hero-content {
+        padding: 0;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-image-container {
+        margin-top: 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-shape {
+        display: none;
+    }
+    
+    .feature-cards {
+        margin-top: 0;
+    }
+
+    .hero-image {
+        height: 280px;
+    }
+}
+
+/* Simple float animation for shapes */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.hero-shape-1 {
+    animation: float 9s ease-in-out infinite;
+}
+
+.hero-shape-2 {
+    animation: float 9s ease-in-out infinite;
+}
+
+.hero-shape-3 {
+    animation: float 12s ease-in-out infinite;
+}
+
+.hero-shape-4 {
+    animation: float 10s ease-in-out infinite;
+} 

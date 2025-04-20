@@ -1,0 +1,660 @@
+/**
+* Numani Kakembo Co
+* Animation Styles
+*/
+
+/* 
+ * Animations & Page Motions
+ * Numani Kakembo Co
+ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide In From Bottom */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+  from { 
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Subtle Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Float Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+  animation: slideInUp 0.8s ease forwards;
+}
+
+.slide-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.slide-right {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.rotate {
+  animation: rotate 8s linear infinite;
+}
+
+.shimmer {
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Staggered Animations */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Animation Delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.fade-in-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.slide-up-scroll {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.animate-on-scroll.slide-left-scroll {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.animate-on-scroll.slide-right-scroll {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.animate-on-scroll.zoom-in-scroll {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+/* Active Animation Classes (Added via JS) */
+.animate-on-scroll.active.fade-in-scroll {
+  opacity: 1;
+}
+
+.animate-on-scroll.active.slide-up-scroll {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animate-on-scroll.active.slide-left-scroll {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate-on-scroll.active.slide-right-scroll {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate-on-scroll.active.zoom-in-scroll {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Page-specific animations */
+.hero-content h1 {
+  opacity: 0;
+  animation: slideInLeft 1s ease 0.2s forwards;
+}
+
+.hero-content p {
+  opacity: 0;
+  animation: slideInLeft 1s ease 0.4s forwards;
+}
+
+.hero-content .btn {
+  opacity: 0;
+  animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.hero-image-container img {
+  opacity: 0;
+  animation: zoomIn 1.2s ease 0.3s forwards;
+}
+
+.counter-stat {
+  opacity: 0;
+  animation: slideInUp 0.8s ease forwards;
+}
+
+.service-item, .team-block, .metamorphic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover, .team-block:hover, .metamorphic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-item img, .team-block img, .metamorphic-card img {
+  transition: transform 0.5s ease;
+}
+
+.service-item:hover img, .team-block:hover img, .metamorphic-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Navbar animations */
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.navbar-bg {
+  background-color: #fff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #223a66;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Logo animation */
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* Footer animations */
+.footer-socials li a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials li a:hover {
+  transform: translateY(-3px);
+}
+
+/* Back to top button animation */
+.backtop {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.backtop:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact form animations */
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(34, 58, 102, 0.25);
+}
+
+/* Icon animations */
+.feature-icon i, .meta-icon i, .icon i {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon i, 
+.metamorphic-card:hover .meta-icon i,
+.service-item:hover .icon i {
+  transform: scale(1.2);
+}
+
+/* Specific animations for minerals and energy section */
+.about-img img {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Creative Footer Divider Animations */
+@keyframes wave {
+  0% { transform: translateX(-100%) scaleY(1); }
+  50% { transform: translateX(-50%) scaleY(0.8); }
+  100% { transform: translateX(0%) scaleY(1); }
+}
+
+@keyframes rotate-pulse {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* New creative divider animations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes dash {
+  0% { width: 0; left: 50%; }
+  50% { width: 80%; left: 10%; }
+  100% { width: 0; left: 100%; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes spin-glow {
+  0% { transform: rotate(0deg); box-shadow: 0 0 8px rgba(34, 58, 102, 0.3); }
+  50% { transform: rotate(180deg); box-shadow: 0 0 16px rgba(34, 58, 102, 0.5); }
+  100% { transform: rotate(360deg); box-shadow: 0 0 8px rgba(34, 58, 102, 0.3); }
+}
+
+/* Special theme animations */
+@keyframes float-star {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(15deg); }
+}
+
+@keyframes ripple-water {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
+  25% { opacity: 0.6; box-shadow: 0 0 2px currentColor; }
+  50% { opacity: 0.8; box-shadow: 0 0 15px currentColor; }
+  75% { opacity: 0.7; box-shadow: 0 0 5px currentColor; }
+}
+
+@keyframes grow-shrink {
+  0%, 100% { transform: scale(1) rotate(45deg); }
+  50% { transform: scale(1.3) rotate(45deg); }
+}
+
+.creative-divider {
+  position: relative;
+  height: 80px;
+  margin: 3rem auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Replace waves with sparkles */
+.wave {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: rgba(34, 58, 102, 0.5);
+  border-radius: 50%;
+}
+
+.wave1 {
+  animation: sparkle 2s ease-in-out infinite;
+  z-index: 1;
+  left: 20%;
+  top: 30px;
+}
+
+.wave2 {
+  animation: sparkle 2s ease-in-out infinite 0.4s;
+  z-index: 2;
+  left: 40%;
+  top: 40px;
+}
+
+.wave3 {
+  animation: sparkle 2s ease-in-out infinite 0.8s;
+  z-index: 3;
+  left: 60%;
+  top: 30px;
+}
+
+/* Add more sparkles */
+.creative-divider .sparkle-1, 
+.creative-divider .sparkle-2 {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: rgba(34, 58, 102, 0.5);
+  border-radius: 50%;
+}
+
+.creative-divider .sparkle-1 {
+  animation: sparkle 2s ease-in-out infinite 1.2s;
+  left: 80%;
+  top: 40px;
+}
+
+.creative-divider .sparkle-2 {
+  animation: sparkle 2s ease-in-out infinite 1.6s;
+  left: 10%;
+  top: 40px;
+}
+
+/* Horizontal line */
+.creative-divider .horizontal-line {
+  position: absolute;
+  height: 2px;
+  background: rgba(34, 58, 102, 0.15);
+  width: 100%;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+}
+
+.divider-icon {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  animation: spin-glow 6s linear infinite;
+}
+
+.divider-icon::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(34, 58, 102, 0.2);
+  animation: ripple 2s linear infinite;
+}
+
+.divider-icon i {
+  color: #223a66;
+  font-size: 20px;
+  transform-origin: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Hover effects for the creative divider */
+.creative-divider:hover .wave {
+  animation-play-state: paused;
+}
+
+.creative-divider:hover .divider-icon {
+  animation-play-state: paused;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(34, 58, 102, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.creative-divider:hover .divider-icon::before {
+  animation-play-state: paused;
+}
+
+.creative-divider:hover .divider-icon i {
+  animation: rotate 1.5s linear infinite;
+}
+
+/* Enhanced hover effects */
+.creative-divider:hover .horizontal-line {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* Theme-specific hover animations */
+.home-divider:hover .wave,
+.home-divider:hover .sparkle-1,
+.home-divider:hover .sparkle-2 {
+  animation: float-star 2s ease-in-out infinite !important;
+}
+
+.about-divider:hover .wave,
+.about-divider:hover .sparkle-1,
+.about-divider:hover .sparkle-2 {
+  animation: ripple-water 2s linear infinite !important;
+}
+
+.service-divider:hover .wave,
+.service-divider:hover .sparkle-1,
+.service-divider:hover .sparkle-2 {
+  animation: flicker 2s linear infinite !important;
+}
+
+.contact-divider:hover .wave,
+.contact-divider:hover .sparkle-1,
+.contact-divider:hover .sparkle-2 {
+  animation: grow-shrink 2s ease-in-out infinite !important;
+}
+
+/* Page-specific variations */
+/* Home divider - Star theme */
+.home-divider .wave,
+.home-divider .sparkle-1,
+.home-divider .sparkle-2 {
+  background: #223a66;
+  box-shadow: 0 0 5px #223a66;
+}
+
+.home-divider .horizontal-line {
+  background: rgba(34, 58, 102, 0.2);
+}
+
+.home-divider .divider-icon {
+  background: linear-gradient(135deg, #ffffff, #e6f0ff);
+}
+
+.home-divider .divider-icon::before {
+  border-color: rgba(34, 58, 102, 0.3);
+}
+
+.home-divider .divider-icon i {
+  color: #223a66;
+}
+
+/* About divider - Water theme */
+.about-divider .wave,
+.about-divider .sparkle-1,
+.about-divider .sparkle-2 {
+  background: #0e567e;
+  box-shadow: 0 0 5px #0e567e;
+  border-radius: 5px;
+  transform-origin: center;
+}
+
+.about-divider .horizontal-line {
+  background: rgba(14, 86, 126, 0.2);
+  height: 4px;
+  border-radius: 2px;
+}
+
+.about-divider .divider-icon {
+  background: linear-gradient(135deg, #ffffff, #e1f5fe);
+}
+
+.about-divider .divider-icon::before {
+  border-color: rgba(14, 86, 126, 0.3);
+}
+
+.about-divider .divider-icon i {
+  color: #0e567e;
+}
+
+/* Service divider - Fire theme */
+.service-divider .wave,
+.service-divider .sparkle-1,
+.service-divider .sparkle-2 {
+  background: #e12454;
+  box-shadow: 0 0 8px #e12454;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  height: 12px;
+  width: 12px;
+}
+
+.service-divider .horizontal-line {
+  background: rgba(225, 36, 84, 0.2);
+}
+
+.service-divider .divider-icon {
+  background: linear-gradient(135deg, #ffffff, #ffe6ed);
+}
+
+.service-divider .divider-icon::before {
+  border-color: rgba(225, 36, 84, 0.3);
+}
+
+.service-divider .divider-icon i {
+  color: #e12454;
+}
+
+/* Contact divider - Earth theme */
+.contact-divider .wave,
+.contact-divider .sparkle-1,
+.contact-divider .sparkle-2 {
+  background: #41975d;
+  box-shadow: 0 0 5px #41975d;
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.contact-divider .horizontal-line {
+  background: rgba(65, 151, 93, 0.2);
+  height: 1px;
+  box-shadow: 0 2px 3px rgba(65, 151, 93, 0.1);
+}
+
+.contact-divider .divider-icon {
+  background: linear-gradient(135deg, #ffffff, #e8f5e9);
+}
+
+.contact-divider .divider-icon::before {
+  border-color: rgba(65, 151, 93, 0.3);
+}
+
+.contact-divider .divider-icon i {
+  color: #41975d;
+}
+
+/* End of Creative Footer Divider Animations */ 
